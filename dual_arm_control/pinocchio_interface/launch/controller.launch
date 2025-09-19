@@ -1,0 +1,18 @@
+<launch>
+  <!-- Pinocchio Controller Node -->
+  <node name="pinocchio_controller" pkg="pinocchio_ros_controller" type="pinocchio_controller_node" output="screen">
+    <!-- Controller parameters -->
+    <param name="control_rate" type="double" value="100.0" />
+    
+    <!-- Robot description - specify your URDF path here -->
+    <param name="urdf_path" type="string" value="$(find pinocchio_ros_controller)/urdf/robot.urdf" />
+    
+    <!-- End effector frame name -->
+    <param name="end_effector_frame" type="string" value="ee_link" />
+    
+    <!-- Topic remappings -->
+    <remap from="joint_states" to="/joint_states" />
+    <remap from="joint_trajectory" to="/joint_trajectory_command" />
+    <remap from="joint_commands" to="/joint_group_position_controller/command" />
+  </node>
+</launch>

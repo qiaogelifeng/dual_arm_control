@@ -1,0 +1,24 @@
+<launch>
+  <!-- 1. 关键修正：参数名必须为 robot_description（ROS约定） -->
+  <param name="robot_description"  
+         command="cat '$(find dual_arm_description)/urdf/openarm/openarm_bimanual.urdf'"/> 
+
+  <!-- 2. 关节状态发布GUI（不变） -->
+  <node name="joint_state_publisher_gui"
+        pkg="joint_state_publisher_gui"
+        type="joint_state_publisher_gui"
+        output="screen"/>
+
+  <!-- 3. 机器人状态发布（不变） -->
+  <node name="robot_state_publisher"
+        pkg="robot_state_publisher"
+        type="robot_state_publisher"
+        output="screen"/>
+
+  <!-- 4. RViz启动（不变，若rviz配置文件存在则正常加载） -->
+  <node name="rviz"
+        pkg="rviz"
+        type="rviz"
+        args="-d $(find dual_arm_description)/rviz/rviz.rviz" 
+        output="screen"/>
+</launch>

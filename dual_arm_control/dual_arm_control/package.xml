@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>dual_arm_control</name>
+    <version>0.0.0</version>
+    <description>Meta package that contains package of dual_arm_control.</description>
+    <maintainer email="zm@gmail.com">Ming Zhao</maintainer>
+
+    <license>BSD</license>
+
+    <!-- <url type="repository">https://github.com/qiayuanliao/legged_control</url>
+    <url type="bugtracker">https://github.com/qiayuanliao/legged_control/issues</url> -->
+
+    <author email="zm@gmail.com">Ming Zhao</author>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <export>
+        <metapackage/>
+    </export>
+</package>
